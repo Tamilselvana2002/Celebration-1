@@ -1,0 +1,261 @@
+/**
+ * CELEBRATION STUDIO — MASTER DESIGN SYSTEM & DESIGN TOKENS
+ * Fluid typography, 8 curated palette presets, glassmorphism, motion curves
+ */
+
+:root {
+  /* ==========================================================================
+     BASE DARK STUDIO FOUNDATION (Creative Atelier Aesthetic)
+     ========================================================================== */
+  --bg-primary: #0a0c12;
+  --bg-secondary: #10141f;
+  --bg-surface: #161c2a;
+  --bg-surface-elevated: #1e2638;
+  --bg-surface-glass: rgba(22, 28, 42, 0.72);
+  --bg-surface-glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Studio Theme Accents (Default: Midnight Gold) */
+  --theme-primary: #e6c065;
+  --theme-primary-hover: #f3d17e;
+  --theme-primary-alpha: rgba(230, 192, 101, 0.16);
+  --theme-accent: #ffd700;
+  --theme-glow: rgba(230, 192, 101, 0.35);
+
+  /* Semantic State Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Text & Typography Scales */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-inverse: #0a0c12;
+
+  --font-display: 'Cinzel', 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-handwriting: 'Caveat', 'Dancing Script', 'Brush Script MT', cursive;
+
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;     /* 72px */
+
+  /* Spacing Scale (8pt Grid) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows & Depth */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 30px -4px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 35px var(--theme-glow);
+
+  /* Motion & Easings */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.6s;
+  --duration-deliberate: 1.2s;
+
+  /* Top Layer & Dialog Transitions */
+  --transition-top-layer: opacity var(--duration-normal) var(--ease-out-expo),
+                          transform var(--duration-normal) var(--ease-out-expo),
+                          overlay var(--duration-normal) var(--ease-out-expo) allow-discrete,
+                          display var(--duration-normal) var(--ease-out-expo) allow-discrete;
+}
+
+/* ==========================================================================
+   THEME PALETTE PRESETS (Dynamic runtime attribute or class)
+   ========================================================================== */
+
+/* 1. Midnight Luxury */
+[data-theme="midnight_luxury"],
+[data-theme="midnight_gold"] {
+  --theme-primary: #e6c065;
+  --theme-primary-hover: #f5d47e;
+  --theme-primary-alpha: rgba(230, 192, 101, 0.18);
+  --theme-accent: #ffd700;
+  --theme-glow: rgba(230, 192, 101, 0.38);
+  --bg-primary: #07080c;
+  --bg-secondary: #0e121a;
+  --bg-surface: #141a26;
+  --bg-surface-elevated: #1e2638;
+}
+
+/* 2. Champagne Gold */
+[data-theme="champagne_gold"],
+[data-theme="champagne_ivory"] {
+  --theme-primary: #e6c887;
+  --theme-primary-hover: #f5dc9e;
+  --theme-primary-alpha: rgba(230, 200, 135, 0.18);
+  --theme-accent: #fff8e7;
+  --theme-glow: rgba(230, 200, 135, 0.35);
+  --bg-primary: #0f0e0c;
+  --bg-secondary: #1a1814;
+  --bg-surface: #26221c;
+  --bg-surface-elevated: #332f27;
+}
+
+/* 3. Romantic Rose */
+[data-theme="romantic_rose"] {
+  --theme-primary: #ff6584;
+  --theme-primary-hover: #ff849d;
+  --theme-primary-alpha: rgba(255, 101, 132, 0.18);
+  --theme-accent: #ffb8c6;
+  --theme-glow: rgba(255, 101, 132, 0.4);
+  --bg-primary: #14080e;
+  --bg-secondary: #1f0c16;
+  --bg-surface: #2b111f;
+  --bg-surface-elevated: #3d192c;
+}
+
+/* 4. Cosmic Dream */
+[data-theme="cosmic_dream"],
+[data-theme="cosmic_violet"] {
+  --theme-primary: #8a4fff;
+  --theme-primary-hover: #a372ff;
+  --theme-primary-alpha: rgba(138, 79, 255, 0.2);
+  --theme-accent: #38e1ff;
+  --theme-glow: rgba(138, 79, 255, 0.45);
+  --bg-primary: #04020d;
+  --bg-secondary: #0a041f;
+  --bg-surface: #140838;
+  --bg-surface-elevated: #200d54;
+}
+
+/* 5. Ethereal Pearl */
+[data-theme="ethereal_pearl"],
+[data-theme="lavender_dream"] {
+  --theme-primary: #cbd5e1;
+  --theme-primary-hover: #e2e8f0;
+  --theme-primary-alpha: rgba(203, 213, 225, 0.18);
+  --theme-accent: #ffffff;
+  --theme-glow: rgba(255, 255, 255, 0.3);
+  --bg-primary: #0a0c10;
+  --bg-secondary: #12161f;
+  --bg-surface: #1a202c;
+  --bg-surface-elevated: #283143;
+}
+
+/* 6. Velvet Burgundy */
+[data-theme="velvet_burgundy"] {
+  --theme-primary: #c59b27;
+  --theme-primary-hover: #dbb33f;
+  --theme-primary-alpha: rgba(197, 155, 39, 0.2);
+  --theme-accent: #f3d17e;
+  --theme-glow: rgba(197, 155, 39, 0.4);
+  --bg-primary: #18040a;
+  --bg-secondary: #260710;
+  --bg-surface: #380b18;
+  --bg-surface-elevated: #4f1123;
+}
+
+/* 7. Aurora Fantasy */
+[data-theme="aurora_fantasy"],
+[data-theme="emerald_aurora"] {
+  --theme-primary: #2ec4b6;
+  --theme-primary-hover: #48d8cb;
+  --theme-primary-alpha: rgba(46, 196, 182, 0.18);
+  --theme-accent: #70e000;
+  --theme-glow: rgba(46, 196, 182, 0.4);
+  --bg-primary: #021312;
+  --bg-secondary: #041f1e;
+  --bg-surface: #062e2c;
+  --bg-surface-elevated: #0a4240;
+}
+
+/* 8. Modern Minimal */
+[data-theme="modern_minimal"] {
+  --theme-primary: #e2e8f0;
+  --theme-primary-hover: #f8fafc;
+  --theme-primary-alpha: rgba(226, 232, 240, 0.15);
+  --theme-accent: #94a3b8;
+  --theme-glow: rgba(226, 232, 240, 0.25);
+  --bg-primary: #080808;
+  --bg-secondary: #121212;
+  --bg-surface: #1a1a1a;
+  --bg-surface-elevated: #262626;
+}
+
+/* 9. Floral Garden */
+[data-theme="floral_garden"],
+[data-theme="celestial_blue"] {
+  --theme-primary: #f472b6;
+  --theme-primary-hover: #f687c1;
+  --theme-primary-alpha: rgba(244, 114, 182, 0.18);
+  --theme-accent: #a7f3d0;
+  --theme-glow: rgba(244, 114, 182, 0.38);
+  --bg-primary: #0a140d;
+  --bg-secondary: #112217;
+  --bg-surface: #183322;
+  --bg-surface-elevated: #234730;
+}
+
+/* 10. Celebration Fireworks */
+[data-theme="celebration_fireworks"] {
+  --theme-primary: #facc15;
+  --theme-primary-hover: #fde047;
+  --theme-primary-alpha: rgba(250, 204, 21, 0.2);
+  --theme-accent: #f97316;
+  --theme-glow: rgba(250, 204, 21, 0.45);
+  --bg-primary: #050819;
+  --bg-secondary: #0a102e;
+  --bg-surface: #101947;
+  --bg-surface-elevated: #182669;
+}
+
+/* 11. Storybook Fantasy */
+[data-theme="storybook_fantasy"],
+[data-theme="nostalgic_film"] {
+  --theme-primary: #d97706;
+  --theme-primary-hover: #f59e0b;
+  --theme-primary-alpha: rgba(217, 119, 6, 0.2);
+  --theme-accent: #fde68a;
+  --theme-glow: rgba(217, 119, 6, 0.38);
+  --bg-primary: #120d09;
+  --bg-secondary: #1f1610;
+  --bg-surface: #2d2017;
+  --bg-surface-elevated: #3d2c20;
+}
+
+/* 12. Custom Creator Theme */
+[data-theme="custom_creator"] {
+  --theme-primary: #e6c065;
+  --theme-primary-hover: #f5d47e;
+  --theme-primary-alpha: rgba(230, 192, 101, 0.18);
+  --theme-accent: #38e1ff;
+  --theme-glow: rgba(230, 192, 101, 0.38);
+  --bg-primary: #0b0d13;
+  --bg-secondary: #131722;
+  --bg-surface: #1b2130;
+  --bg-surface-elevated: #252d42;
+}

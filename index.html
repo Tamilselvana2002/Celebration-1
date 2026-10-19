@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight_luxury">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday SriMa — Celebration Experience</title>
+  
+  <meta name="description" content="A cinematic personalized celebration for SRIMA">
+  <meta property="og:title" content="Happy Birthday SriMa">
+  <meta property="og:description" content="A cinematic personalized celebration for SRIMA">
+
+  <link rel="stylesheet" href="./static/css/tokens.css">
+  <link rel="stylesheet" href="./static/css/studio.css">
+  <link rel="stylesheet" href="./static/css/engines.css">
+</head>
+<body style="margin: 0; padding: 0; overflow: hidden; background: var(--bg-primary);">
+
+  
+
+<div class="celebration-viewport" data-theme="midnight_luxury">
+  <!-- Background Atmospheric Canvas (Living starfield, dust, clouds, aurora) -->
+  <canvas id="bgAnimationCanvas" class="bg-animation-canvas"></canvas>
+
+  <!-- Full-Screen FX Scene Transition Canvas (Light sweep, silk, warp, portal) -->
+  <canvas id="fxTransitionCanvas" class="fx-transition-canvas"></canvas>
+  
+  <!-- HUD: Top Bar -->
+  <div class="viewport-hud">
+    <div class="hud-top-bar">
+      <!-- Ambient Audio Equalizer Toggle -->
+      <button class="hud-pill hud-audio-toggle audio-muted" style="border: none; cursor: pointer;" title="Toggle Ambient Soundtrack">
+        <div class="audio-equalizer">
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+        </div>
+        <span>Soundtrack: Celestial_Drift</span>
+      </button>
+
+      <!-- Skip Intro Pill -->
+      <div style="display: flex; gap: var(--space-3);">
+        <button class="hud-pill hud-skip-intro-btn" style="border: none; cursor: pointer;">
+          <span>Skip Intro ⏭</span>
+        </button>
+        <button class="hud-pill hud-fullscreen-btn" style="border: none; cursor: pointer;" title="Toggle Fullscreen">
+          <span>⛶</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- HUD: Bottom Navigation Controls (Sleek Centered Scene Dots) -->
+    <div class="hud-bottom-bar">
+      <div class="hud-nav-dots">
+        <!-- Rendered by SceneOrchestrator -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scene Containers Loop -->
+  <div class="viewport-scene-stage">
+    
+
+      <!-- ENGINE 1: CINEMATIC EXPERIENCE -->
+      
+      <div class="scene-container engine-cinematic scene-active" data-scene-type="cinematic" data-scene-id="a5897c19-4b59-449a-a81d-e0bc7d98ffd0">
+        <div class="cinematic-vignette"></div>
+        <div class="cinematic-blast-flash"></div>
+        <div class="cinematic-blast-shockwave"></div>
+
+        <div class="cinematic-content-wrap">
+          <!-- STAGE 1: Centered Countdown Timing Spotlight -->
+          
+          <div class="cinematic-countdown-stage">
+            <div class="countdown-spotlight-glow"></div>
+            <div class="cinematic-countdown-ring">
+              <svg class="countdown-svg" width="120" height="120">
+                <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,0.08)" stroke-width="5" fill="none" />
+                <circle class="countdown-circle" cx="60" cy="60" r="52" stroke="var(--theme-primary)" stroke-width="5" fill="none" />
+              </svg>
+              <span class="countdown-number">3</span>
+            </div>
+            <div class="countdown-ambient-tag font-mono">✦ INCOMING CELEBRATION ✦</div>
+          </div>
+          
+
+          <!-- STAGE 2 & 3: Revealed Personalized Message Out of Blast -->
+          <div class="cinematic-greeting-wrap">
+            <div class="cinematic-prefix font-mono">A Little World of Magic, Just for You ✨</div>
+            <h1 class="cinematic-title font-display">My Dearest Sister ❤️</h1>
+            <p class="cinematic-subtitle">To the girl who makes life brighter, laughter louder, and every memory more beautiful — today, this little universe shines just for you. You are more than a sister; you are a forever friend, a precious blessing, and a piece of my heart. Happy Birthday to my one and only superstar! 🎂💖✨</p>
+
+            <div class="cinematic-continue-guide">
+              <span class="guide-sparkle">✦</span>
+              <span>Tap anywhere or press <strong>Enter</strong> to begin journey</span>
+              <span class="guide-sparkle">✦</span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINE 2: ROMANTIC DREAM WORLD -->
+      
+
+    
+
+      <!-- ENGINE 1: CINEMATIC EXPERIENCE -->
+      
+      <div class="scene-container engine-dream " data-scene-type="romantic_dream" data-scene-id="69c30005-ff31-4663-9fab-5b6a9442c3a6">
+        <div class="dream-content-wrap">
+          <div class="dream-glass-card">
+            <div class="dream-heart-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h2 class="dream-quote font-display">&quot;Some bonds are written in the stars, and ours is written in my heart.&quot;</h2>
+            <p class="dream-message">Wishing SRIMA every ounce of joy and radiance in this new chapter.</p>
+            <div style="font-size: var(--text-xs); color: var(--theme-primary); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;">
+              ✨ Tap anywhere to bloom starlight petals ✨
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINE 3: MEMORY LANE (Sequential Storyteller Showcase) -->
+      
+
+    
+
+      <!-- ENGINE 1: CINEMATIC EXPERIENCE -->
+      
+      <div class="scene-container engine-memory " data-scene-type="memory_lane" data-scene-id="f141fdd7-8739-4329-9d24-85060d610763">
+        <div class="memory-content-wrap">
+          <div class="memory-header">
+            <div style="font-size: var(--text-xs); color: var(--theme-primary); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: var(--space-2);">
+              Through the Years with My Sister
+            </div>
+            <h2 class="font-display" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem);">Echoes of Memory</h2>
+          </div>
+
+          <!-- Centered Sequential Story Stage -->
+          <div class="memory-storyteller-stage">
+            <div class="deck-shadow-layer deck-layer-2"></div>
+            <!-- Hold-to-pause indicator badge -->
+            <div class="memory-pause-pill">
+              <span class="pause-pill-dot"></span>
+              <span class="pause-pill-text">Paused — Release to resume</span>
+            </div>
+
+            
+            <div class="memory-slide-card active" data-index="0">
+              <div class="washi-tape-accent"></div>
+              
+              <!-- Clean Memory Counter Badge on Top-Right Corner of Photo Frame -->
+              <div class="polaroid-badge">
+                <span class="polaroid-badge-current">1</span> / 3
+              </div>
+
+              <div class="polaroid-photo-frame">
+                
+                  <img src="./static/img/memory_stargazing.jpg" alt="Partners in Mischief" class="polaroid-img" loading="eager">
+                  <div class="photo-sheen-overlay"></div>
+                
+                <div class="polaroid-reflection-sweep"></div>
+              </div>
+
+              <div class="memory-slide-content">
+                <div class="polaroid-caption">Partners in Mischief</div>
+                <div class="polaroid-year-tag">Childhood • Roots</div>
+                <p class="polaroid-note-text">From stealing snacks to building pillow forts and endless secret whispered laughter.</p>
+                
+                <div class="polaroid-quote-text font-serif">
+                  “No one understands our family jokes quite like you do.”
+                </div>
+                
+              </div>
+
+              <!-- Sleek Integrated Progress Line within Card Frame -->
+              <div class="polaroid-progress-line">
+                <div class="polaroid-progress-fill"></div>
+              </div>
+            </div>
+            
+            <div class="memory-slide-card " data-index="1">
+              <div class="washi-tape-accent"></div>
+              
+              <!-- Clean Memory Counter Badge on Top-Right Corner of Photo Frame -->
+              <div class="polaroid-badge">
+                <span class="polaroid-badge-current">2</span> / 3
+              </div>
+
+              <div class="polaroid-photo-frame">
+                
+                  <img src="./static/img/memory_bakery.jpg" alt="Late Night Heart-to-Hearts" class="polaroid-img" loading="eager">
+                  <div class="photo-sheen-overlay"></div>
+                
+                <div class="polaroid-reflection-sweep"></div>
+              </div>
+
+              <div class="memory-slide-content">
+                <div class="polaroid-caption">Late Night Heart-to-Hearts</div>
+                <div class="polaroid-year-tag">Growing Up • Anchor</div>
+                <p class="polaroid-note-text">Always the first person I turn to when life gets complicated. You’ve always had my back.</p>
+                
+                <div class="polaroid-quote-text font-serif">
+                  “Side by side or miles apart, we are sisters connected by heart.”
+                </div>
+                
+              </div>
+
+              <!-- Sleek Integrated Progress Line within Card Frame -->
+              <div class="polaroid-progress-line">
+                <div class="polaroid-progress-fill"></div>
+              </div>
+            </div>
+            
+            <div class="memory-slide-card " data-index="2">
+              <div class="washi-tape-accent"></div>
+              
+              <!-- Clean Memory Counter Badge on Top-Right Corner of Photo Frame -->
+              <div class="polaroid-badge">
+                <span class="polaroid-badge-current">3</span> / 3
+              </div>
+
+              <div class="polaroid-photo-frame">
+                
+                  <img src="./static/img/memory_toast.jpg" alt="Watching You Shine" class="polaroid-img" loading="eager">
+                  <div class="photo-sheen-overlay"></div>
+                
+                <div class="polaroid-reflection-sweep"></div>
+              </div>
+
+              <div class="memory-slide-content">
+                <div class="polaroid-caption">Watching You Shine</div>
+                <div class="polaroid-year-tag">Today &amp; Always • Radiance</div>
+                <p class="polaroid-note-text">Seeing everything you have accomplished fills my heart with endless pride. Keep soaring!</p>
+                
+                <div class="polaroid-quote-text font-serif">
+                  “To my sister: my greatest cheerleader, confidante, and lifelong best friend.”
+                </div>
+                
+              </div>
+
+              <!-- Sleek Integrated Progress Line within Card Frame -->
+              <div class="polaroid-progress-line">
+                <div class="polaroid-progress-fill"></div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- Clean Floating Helper Note Underneath Stage -->
+          <div class="memory-interaction-guide">
+            <span class="guide-item">✦ <strong>Tap card</strong> or press <strong>Enter</strong> to advance</span>
+            <span class="guide-sep">•</span>
+            <span class="guide-item">✦ <strong>Press &amp; hold</strong> to pause</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINE 4: SECRET SURPRISE (Reconstructed Sculptural Art Gift Box) -->
+      
+
+    
+
+      <!-- ENGINE 1: CINEMATIC EXPERIENCE -->
+      
+      <div class="scene-container engine-surprise gift-style-champagne_gold " data-scene-type="secret_surprise" data-scene-id="cccc6a6c-74c6-4bc0-a64e-42cd9f9ce500" data-gift-style="champagne_gold">
+        
+        <!-- Atmospheric Stage Ambient Lighting Core -->
+        <div class="sculpture-stage-glow"></div>
+        <div class="sculpture-spotlight-beam"></div>
+
+        <div class="surprise-content-wrap">
+          <div class="surprise-prompt" style="margin-bottom: var(--space-6); text-align: center;">
+            <div class="sculpture-eyebrow-tag font-mono">
+              ✦ Curated Mystery Keepsake ✦
+            </div>
+            <h2 class="font-display sculpture-title" style="font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: var(--space-2);">
+              The Mystery Box
+            </h2>
+            <p class="sculpture-subtitle" style="color: var(--text-muted); font-size: clamp(0.9rem, 1.8vw, 1.05rem); max-width: 520px; margin: 0 auto;">
+              Tap to unlock a surprise prepared just for you...
+            </p>
+          </div>
+
+          <!-- Sculptural Art Stage (True 3D Multi-Layer Artifact) -->
+          <div class="sculpture-stage-viewport">
+            <div class="sculpture-pedestal-plinth"></div>
+            
+            <!-- Dedicated True 3D Three.js WebGL Canvas -->
+            <div class="gift-three-canvas-wrap" id="giftThreeContainer" title="Drag to rotate in 3D / Click to open"></div>
+
+            <!-- CSS 3D Artifact Object (Fallback if WebGL disabled) -->
+            <div class="sculpture-artifact-3d" style="--gift-box-bg: #b91c1c; --gift-ribbon-bg: #f59e0b;">
+              <!-- Internal Chamber Light (Erupts during reveal) -->
+              <div class="sculpture-inner-chamber">
+                <div class="chamber-light-source"></div>
+                <!-- Cosmic Starlight Aperture (For Image #1 Cosmic Relic) -->
+                <div class="chamber-cosmic-aperture">
+                  <div class="aperture-core-star">✦</div>
+                  <div class="aperture-sunbeams">
+                    <span class="beam-spike beam-1"></span>
+                    <span class="beam-spike beam-2"></span>
+                    <span class="beam-spike beam-3"></span>
+                    <span class="beam-spike beam-4"></span>
+                  </div>
+                </div>
+                <div class="chamber-floating-relic">✦</div>
+              </div>
+
+              <!-- Outer Shell Geometry & Facets -->
+              <div class="sculpture-primary-shell">
+                <div class="shell-facet shell-facet-front"></div>
+                <div class="shell-facet shell-facet-back"></div>
+                <div class="shell-facet shell-facet-left"></div>
+                <div class="shell-facet shell-facet-right"></div>
+                <div class="shell-facet shell-facet-bottom"></div>
+                <div class="shell-specular-sweep"></div>
+                <!-- Baroque Gilded Filigree Overlay (For Image #1 & Velvet Heritage) -->
+                <div class="shell-filigree-overlay"></div>
+                <!-- Cyber Neon Bevel Pipes (For Image #3 Dream Prism) -->
+                <div class="shell-neon-bevels"></div>
+              </div>
+
+              <!-- Sculpted Ribbon Binding / Structural Harness -->
+              <div class="sculpture-ribbon-harness">
+                <div class="ribbon-band ribbon-band-v"></div>
+                <div class="ribbon-band ribbon-band-h"></div>
+                <!-- 3D Luxury Organza Bow Knot (For Image #2 Champagne Gold & Image #3 Dream Prism) -->
+                <div class="ribbon-bow-knot">
+                  <div class="bow-loop bow-loop-left"></div>
+                  <div class="bow-loop bow-loop-right"></div>
+                  <div class="bow-center-tie"></div>
+                  <div class="bow-tail bow-tail-left"></div>
+                  <div class="bow-tail bow-tail-right"></div>
+                </div>
+                <div class="ribbon-clasp-ornament">
+                  <span class="clasp-gem">✦</span>
+                </div>
+              </div>
+
+              <!-- Kinetic Articulated Lid / Opening Crown -->
+              <div class="sculpture-articulated-crown">
+                <div class="crown-plate"></div>
+                <div class="crown-filigree"></div>
+                <div class="crown-finial">✦</div>
+                <div class="crown-light-halo"></div>
+              </div>
+
+              <!-- Realistic Floating Shadow Contact -->
+              <div class="sculpture-ground-shadow"></div>
+            </div>
+          </div>
+
+          <!-- 3D Interactive Helper Guide -->
+          <div class="gift-interaction-guide font-mono">
+            <span class="guide-gem">✦</span>
+            <span>Drag to rotate in <strong>3D</strong></span>
+            <span class="guide-sep">•</span>
+            <span>Click to unlock surprise</span>
+            <span class="guide-gem">✦</span>
+          </div>
+
+          <!-- Gift Quick Actions (Refined Ergonomic Bar) -->
+          <div class="gift-action-bar">
+            <button type="button" class="gift-action-btn gift-skip-btn">
+              <span>Open Directly</span> <span style="opacity: 0.6;">⏭</span>
+            </button>
+            <button type="button" class="gift-action-btn gift-rewrap-btn" style="display: none;">
+              <span>↺ Re-assemble Sculpture</span>
+            </button>
+          </div>
+
+          <!-- Unfolded Luxury Letter Revealed Post-Tap -->
+          <div class="surprise-letter-unfold">
+            
+
+            <div class="letter-parchment-inner">
+              <div class="letter-wax-seal">
+                <span>✦</span>
+              </div>
+              <h3 class="font-display letter-headline" style="font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-bottom: var(--space-4); color: #843d12;">
+                TO MY SISTER, MY FOREVER STAR ✨❤️
+              </h3>
+              <div class="letter-text"><p>You are more than my sister — you are my happiness, and one of the most beautiful blessings in my life. No matter how much we grow or where life takes us, you will always have a special place in my heart. May your birthday be filled with the same love and happiness you bring into my world. You will always be my forever friend. Happy Birthday, my dearest sister! 🎂💖✨</p></div>
+              
+              <div class="letter-signature-signoff">
+                — Your proudest Anna❤️
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ENGINE 5: COSMIC UNIVERSE (Reconstructed Ultimate Hybrid Finale) -->
+      
+
+    
+
+      <!-- ENGINE 1: CINEMATIC EXPERIENCE -->
+      
+      <div class="scene-container engine-cosmic finale-style-grand_celebration " data-scene-type="cosmic_universe" data-scene-id="c7c2a42b-3145-41e2-9c8c-fd9a7d098197">
+        
+        <!-- Volumetric Environmental Layers -->
+        <div class="finale-deep-atmosphere-gradient"></div>
+        <div class="finale-volumetric-light-cone"></div>
+
+        <div class="cosmic-content-wrap finale-layout-centered">
+          
+          <!-- HERO ARTWORK LAYER: Large Celestial Luminous Halo & Portrait Sculpture -->
+          <div class="finale-hero-sculpture-stage">
+            <div class="sculpted-celestial-halo">
+              <div class="halo-ring halo-ring-outer"></div>
+              <div class="halo-ring halo-ring-middle"></div>
+              <div class="halo-ring halo-ring-inner"></div>
+              <div class="halo-light-sweeps"></div>
+              <div class="halo-constellation-nodes">
+                <span class="node-star" style="top: 8%; left: 50%;">✦</span>
+                <span class="node-star" style="top: 50%; left: 92%;">✦</span>
+                <span class="node-star" style="top: 92%; left: 50%;">✦</span>
+                <span class="node-star" style="top: 50%; left: 8%;">✦</span>
+              </div>
+            </div>
+
+            
+            <!-- Abstract Celestial Centerpiece (If no user photo provided) -->
+            <div class="finale-abstract-celestial-centerpiece">
+              <div class="centerpiece-core-orb"></div>
+              <div class="centerpiece-nested-arcs"></div>
+              <div class="centerpiece-monogram font-display">
+                S
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- TYPOGRAPHY & STORYTELLING LAYER -->
+          <div class="finale-story-text-container">
+            <div class="cosmic-constellation-title font-mono">
+              ✦ Constellation of SRIMA ✦
+            </div>
+
+            
+            <div class="finale-recipient-display-name font-display">
+              SRIMA
+            </div>
+            
+
+            <h1 class="cosmic-stardust-message font-display">
+              To My Beautiful Sister
+            </h1>
+            
+            
+            <div class="cosmic-closing-message font-serif">
+              <p>May your year ahead be filled with boundless laughter, deep peace, and extraordinary adventures.</p>
+            </div>
+            
+
+            
+
+            <!-- Redesigned Wishes: Elegant Stream of Blessings (NOT generic chip buttons) -->
+            
+            <div class="cosmic-wishes-stream">
+              
+                <span class="cosmic-wish-phrase font-serif">
+                  <span class="wish-star">✦</span> Unshakable Joy
+                </span>
+                <span class="wish-divider">•</span>
+              
+                <span class="cosmic-wish-phrase font-serif">
+                  <span class="wish-star">✦</span> Boundless Dreams
+                </span>
+                <span class="wish-divider">•</span>
+              
+                <span class="cosmic-wish-phrase font-serif">
+                  <span class="wish-star">✦</span> Peace &amp; Warmth
+                </span>
+                <span class="wish-divider">•</span>
+              
+                <span class="cosmic-wish-phrase font-serif">
+                  <span class="wish-star">✦</span> Endless Laughter
+                </span>
+                
+              
+            </div>
+            
+
+            
+            <div class="cosmic-signature">
+              — Your proudest sibling ❤️
+            </div>
+            
+          </div>
+
+          <!-- ACTIONS LAYER (Harmonious Secondary Controls) -->
+          <div class="finale-action-bar">
+            <button type="button" class="btn btn-primary btn-lg finale-replay-btn" onclick="window.orchestrator.activateScene(0)">
+              <span>↺ Replay Experience</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg finale-replay-climax-btn" onclick="window.orchestrator.replayClimax()">
+              <span>✨ Replay Finale Climax</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      
+
+    
+  </div>
+
+  <!-- Central Animation Engine Configuration Payload -->
+  <script id="celebrationAnimationConfig" type="application/json">
+    {"schema_version": 1, "preset_id": "romantic_glow", "preset_name": "Romantic Glow", "screen_transition": "screen.petal_curtain", "image_transition": "image.camera_focus", "background_effect": "background.candlelight", "gift_effect": "gift.blooming", "finale_effect": "finale.heart_of_light", "intensity": "balanced", "speed": 1.0, "respect_reduced_motion": true, "sound_effects_enabled": true}
+  </script>
+
+  <!-- Master Audio Engine Configuration Payload -->
+  <script id="celebrationAudioConfig" type="application/json">
+    {"enabled": true, "source_type": "preset", "custom_url": "", "volume": 0.75, "loop": true, "start_time": 0, "fade_in_seconds": 1.5, "fade_out_seconds": 2.0, "ducking_on_reveal": true}
+  </script>
+
+</div>
+
+
+  <!-- Vendor Animation Libraries -->
+  <script src="./static/vendor/gsap.min.js"></script>
+  <script src="./static/vendor/three.min.js"></script>
+  <script src="./static/vendor/canvas-confetti.min.js"></script>
+
+  <!-- Audio Controller & Master Scene Orchestrator -->
+  <script src="./static/js/audio_controller.js"></script>
+  <script type="module" src="./static/js/orchestrator.js"></script>
+</body>
+</html>
