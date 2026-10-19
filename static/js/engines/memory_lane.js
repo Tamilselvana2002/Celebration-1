@@ -321,6 +321,12 @@ export class MemoryLaneEngine {
     this.startTimer();
   }
 
+  reset() {
+    this.clearTimer();
+    this.currentIndex = 0;
+    this.showSlide(0, false);
+  }
+
   destroy() {
     this.clearTimer();
     if (this.holdTimer) clearTimeout(this.holdTimer);

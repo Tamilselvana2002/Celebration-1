@@ -55,6 +55,18 @@ export class SecretSurpriseEngine {
     this.threeContainer = this.container.querySelector('#giftThreeContainer, .gift-three-canvas-wrap');
     this.cssBox = this.container.querySelector('.sculpture-artifact-3d, .gift-box-3d');
 
+    // Ensure stage and 3D container are visible and letter is hidden on initial mount or replay
+    if (this.boxStage) this.boxStage.style.display = 'block';
+    if (this.threeContainer) this.threeContainer.style.display = 'block';
+    if (this.letterUnfold) this.letterUnfold.style.display = 'none';
+    const prompt = this.container.querySelector('.surprise-prompt');
+    if (prompt) {
+      prompt.style.opacity = '1';
+      prompt.style.transform = '';
+    }
+    this.isOpened = false;
+    this.state = 'idle';
+
     // Attempt to initialize True 3D Three.js WebGL engine
     const threeInitialized = this.initThreeBox();
 
@@ -709,6 +721,10 @@ export class SecretSurpriseEngine {
     });
   }
 
+  reset() {
+    this.rewrapBox();
+  }
+
   destroy() {
     if (this.animFrameId) {
       cancelAnimationFrame(this.animFrameId);
@@ -717,6 +733,7 @@ export class SecretSurpriseEngine {
 
     if (this.threeContainer) {
       this.threeContainer.removeEventListener('pointerdown', this.onPointerDown);
+      this.threeContainer.innerHTML = '';
     }
     window.removeEventListener('pointermove', this.onPointerMove);
     window.removeEventListener('pointerup', this.onPointerUp);
@@ -730,5 +747,12 @@ export class SecretSurpriseEngine {
       this.renderer.dispose();
       this.renderer = null;
     }
+    this.scene = null;
+    this.camera = null;
+    this.giftGroup = null;
+    this.baseGroup = null;
+    this.lidGroup = null;
+    this.relicCoreGroup = null;
+    this.orbitalRings = [];
   }
 }

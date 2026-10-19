@@ -109,9 +109,16 @@ export class CinematicEngine {
   }
 
   startCountdown(circleEl, numberEl, stageEl, greetingWrap, flashEl, shockwaveEl) {
-    let count = parseInt(numberEl.textContent.trim(), 10) || 3;
+    const initialSeconds = parseInt(this.container.dataset.countdownSeconds, 10) || 3;
+    let count = initialSeconds;
     const total = count;
     const circumference = 327;
+
+    numberEl.textContent = count;
+    circleEl.style.strokeDashoffset = '0';
+    stageEl.style.display = '';
+    stageEl.style.opacity = '1';
+    stageEl.style.transform = '';
 
     // Initial audio chime
     if (window.CelebrationAudio && typeof window.CelebrationAudio.playChime === 'function') {

@@ -130,18 +130,36 @@ export class SceneOrchestrator {
       }
     });
 
-    // Touch swipe handling
+    // Touch swipe handling with gesture conflict avoidance
     let touchStartX = 0;
+    let touchStartY = 0;
+    let isTouchIgnored = false;
+
     this.viewport.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
+      // Avoid intercepting touches on 3D WebGL gift box or stage
+      if (e.target.closest('#giftThreeContainer, .gift-three-canvas-wrap, .sculpture-stage-viewport')) {
+        isTouchIgnored = true;
+        return;
+      }
+      isTouchIgnored = false;
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
     }, { passive: true });
 
     this.viewport.addEventListener('touchend', (e) => {
-      const touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 50) {
-        this.nextScene();
-      } else if (touchEndX - touchStartX > 50) {
-        this.prevScene();
+      if (isTouchIgnored) return;
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const deltaX = touchStartX - touchEndX;
+      const deltaY = touchStartY - touchEndY;
+
+      // Only navigate if horizontal swipe is intentional and exceeds vertical motion
+      if (Math.abs(deltaX) > 60 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        if (deltaX > 0) {
+          this.nextScene();
+        } else {
+          this.prevScene();
+        }
       }
     }, { passive: true });
   }
@@ -225,6 +243,88 @@ export class SceneOrchestrator {
     if (this.currentIndex > 0) {
       this.activateScene(this.currentIndex - 1);
     }
+  }
+
+  replayExperience() {
+    // 1. Destroy active engine safely
+    if (this.activeEngine) {
+      try {
+        this.activeEngine.destroy();
+      } catch (err) {
+        console.warn('Engine destroy error during replay:', err);
+      }
+      this.activeEngine = null;
+    }
+
+    // 2. Explicitly reset all scene containers DOM states
+    this.scenes.forEach((scene) => {
+      // Reset Engine 1 DOM
+      const countdownStage = scene.querySelector('.cinematic-countdown-stage');
+      const greetingWrap = scene.querySelector('.cinematic-greeting-wrap');
+      const countdownCircle = scene.querySelector('.countdown-circle');
+      const countdownNumber = scene.querySelector('.countdown-number');
+      if (countdownStage) {
+        countdownStage.style.display = '';
+        countdownStage.style.opacity = '1';
+        countdownStage.style.transform = '';
+      }
+      if (countdownCircle) {
+        countdownCircle.style.strokeDashoffset = '0';
+      }
+      if (countdownNumber) {
+        const initialSeconds = scene.dataset.countdownSeconds || '3';
+        countdownNumber.textContent = initialSeconds;
+      }
+      if (greetingWrap) {
+        greetingWrap.style.display = 'none';
+        greetingWrap.style.opacity = '0';
+        greetingWrap.style.transform = '';
+        greetingWrap.style.filter = '';
+      }
+
+      // Reset Engine 3 DOM
+      const memorySlides = Array.from(scene.querySelectorAll('.memory-slide-card'));
+      memorySlides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === 0);
+        slide.style.opacity = idx === 0 ? '1' : '0';
+        slide.style.transform = '';
+        const progressFill = slide.querySelector('.polaroid-progress-fill');
+        if (progressFill) progressFill.style.width = '0%';
+      });
+
+      // Reset Engine 4 DOM
+      const boxStage = scene.querySelector('.sculpture-stage-viewport, .gift-box-stage');
+      const threeContainer = scene.querySelector('#giftThreeContainer, .gift-three-canvas-wrap');
+      const letterUnfold = scene.querySelector('.surprise-letter-unfold');
+      const cssBox = scene.querySelector('.sculpture-artifact-3d, .gift-box-3d');
+      const prompt = scene.querySelector('.surprise-prompt');
+      if (boxStage) {
+        boxStage.style.display = 'block';
+      }
+      if (threeContainer) {
+        threeContainer.style.display = 'block';
+        threeContainer.innerHTML = '';
+      }
+      if (cssBox) {
+        cssBox.style.display = '';
+        cssBox.style.transform = '';
+        cssBox.style.opacity = '1';
+      }
+      if (letterUnfold) {
+        letterUnfold.style.display = 'none';
+      }
+      if (prompt) {
+        prompt.style.opacity = '1';
+        prompt.style.transform = '';
+      }
+
+      // Reset Engine 5 DOM
+      const heart = scene.querySelector('.finale-fx-heart-light');
+      if (heart) heart.remove();
+    });
+
+    // 3. Clean transition back to scene 0
+    this.activateScene(0, true);
   }
 
   replayClimax() {

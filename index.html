@@ -28,26 +28,15 @@
   <!-- HUD: Top Bar -->
   <div class="viewport-hud">
     <div class="hud-top-bar">
-      <!-- Ambient Audio Equalizer Toggle -->
-      <button class="hud-pill hud-audio-toggle audio-muted" style="border: none; cursor: pointer;" title="Toggle Ambient Soundtrack">
+      <!-- Minimal Ambient Audio Equalizer Toggle -->
+      <button class="hud-pill hud-audio-toggle audio-muted" style="border: none; cursor: pointer;" title="Toggle Ambient Soundtrack" aria-label="Toggle Sound">
         <div class="audio-equalizer">
           <div class="audio-bar"></div>
           <div class="audio-bar"></div>
           <div class="audio-bar"></div>
           <div class="audio-bar"></div>
         </div>
-        <span>Soundtrack: Celestial_Drift</span>
       </button>
-
-      <!-- Skip Intro Pill -->
-      <div style="display: flex; gap: var(--space-3);">
-        <button class="hud-pill hud-skip-intro-btn" style="border: none; cursor: pointer;">
-          <span>Skip Intro ⏭</span>
-        </button>
-        <button class="hud-pill hud-fullscreen-btn" style="border: none; cursor: pointer;" title="Toggle Fullscreen">
-          <span>⛶</span>
-        </button>
-      </div>
     </div>
 
     <!-- HUD: Bottom Navigation Controls (Sleek Centered Scene Dots) -->
@@ -64,7 +53,7 @@
 
       <!-- ENGINE 1: CINEMATIC EXPERIENCE -->
       
-      <div class="scene-container engine-cinematic scene-active" data-scene-type="cinematic" data-scene-id="a5897c19-4b59-449a-a81d-e0bc7d98ffd0">
+      <div class="scene-container engine-cinematic scene-active" data-scene-type="cinematic" data-scene-id="a5897c19-4b59-449a-a81d-e0bc7d98ffd0" data-countdown-seconds="3">
         <div class="cinematic-vignette"></div>
         <div class="cinematic-blast-flash"></div>
         <div class="cinematic-blast-shockwave"></div>
@@ -81,7 +70,6 @@
               </svg>
               <span class="countdown-number">3</span>
             </div>
-            <div class="countdown-ambient-tag font-mono">✦ INCOMING CELEBRATION ✦</div>
           </div>
           
 
@@ -91,11 +79,6 @@
             <h1 class="cinematic-title font-display">My Dearest Sister ❤️</h1>
             <p class="cinematic-subtitle">To the girl who makes life brighter, laughter louder, and every memory more beautiful — today, this little universe shines just for you. You are more than a sister; you are a forever friend, a precious blessing, and a piece of my heart. Happy Birthday to my one and only superstar! 🎂💖✨</p>
 
-            <div class="cinematic-continue-guide">
-              <span class="guide-sparkle">✦</span>
-              <span>Tap anywhere or press <strong>Enter</strong> to begin journey</span>
-              <span class="guide-sparkle">✦</span>
-            </div>
             
           </div>
         </div>
@@ -118,9 +101,6 @@
             </div>
             <h2 class="dream-quote font-display">&quot;Some bonds are written in the stars, and ours is written in my heart.&quot;</h2>
             <p class="dream-message">Wishing SRIMA every ounce of joy and radiance in this new chapter.</p>
-            <div style="font-size: var(--text-xs); color: var(--theme-primary); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;">
-              ✨ Tap anywhere to bloom starlight petals ✨
-            </div>
           </div>
         </div>
       </div>
@@ -144,11 +124,6 @@
           <!-- Centered Sequential Story Stage -->
           <div class="memory-storyteller-stage">
             <div class="deck-shadow-layer deck-layer-2"></div>
-            <!-- Hold-to-pause indicator badge -->
-            <div class="memory-pause-pill">
-              <span class="pause-pill-dot"></span>
-              <span class="pause-pill-text">Paused — Release to resume</span>
-            </div>
 
             
             <div class="memory-slide-card active" data-index="0">
@@ -251,13 +226,6 @@
             </div>
             
           </div>
-
-          <!-- Clean Floating Helper Note Underneath Stage -->
-          <div class="memory-interaction-guide">
-            <span class="guide-item">✦ <strong>Tap card</strong> or press <strong>Enter</strong> to advance</span>
-            <span class="guide-sep">•</span>
-            <span class="guide-item">✦ <strong>Press &amp; hold</strong> to pause</span>
-          </div>
         </div>
       </div>
 
@@ -276,9 +244,6 @@
 
         <div class="surprise-content-wrap">
           <div class="surprise-prompt" style="margin-bottom: var(--space-6); text-align: center;">
-            <div class="sculpture-eyebrow-tag font-mono">
-              ✦ Curated Mystery Keepsake ✦
-            </div>
             <h2 class="font-display sculpture-title" style="font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: var(--space-2);">
               The Mystery Box
             </h2>
@@ -292,7 +257,7 @@
             <div class="sculpture-pedestal-plinth"></div>
             
             <!-- Dedicated True 3D Three.js WebGL Canvas -->
-            <div class="gift-three-canvas-wrap" id="giftThreeContainer" title="Drag to rotate in 3D / Click to open"></div>
+            <div class="gift-three-canvas-wrap" id="giftThreeContainer"></div>
 
             <!-- CSS 3D Artifact Object (Fallback if WebGL disabled) -->
             <div class="sculpture-artifact-3d" style="--gift-box-bg: #b91c1c; --gift-ribbon-bg: #f59e0b;">
@@ -356,23 +321,6 @@
             </div>
           </div>
 
-          <!-- 3D Interactive Helper Guide -->
-          <div class="gift-interaction-guide font-mono">
-            <span class="guide-gem">✦</span>
-            <span>Drag to rotate in <strong>3D</strong></span>
-            <span class="guide-sep">•</span>
-            <span>Click to unlock surprise</span>
-            <span class="guide-gem">✦</span>
-          </div>
-
-          <!-- Gift Quick Actions (Refined Ergonomic Bar) -->
-          <div class="gift-action-bar">
-            <button type="button" class="gift-action-btn gift-skip-btn">
-              <span>Open Directly</span> <span style="opacity: 0.6;">⏭</span>
-            </button>
-            <button type="button" class="gift-action-btn gift-rewrap-btn" style="display: none;">
-              <span>↺ Re-assemble Sculpture</span>
-            </button>
           </div>
 
           <!-- Unfolded Luxury Letter Revealed Post-Tap -->
@@ -498,13 +446,10 @@
             
           </div>
 
-          <!-- ACTIONS LAYER (Harmonious Secondary Controls) -->
+          <!-- ACTIONS LAYER (Discreet Minimal Replay) -->
           <div class="finale-action-bar">
-            <button type="button" class="btn btn-primary btn-lg finale-replay-btn" onclick="window.orchestrator.activateScene(0)">
-              <span>↺ Replay Experience</span>
-            </button>
-            <button type="button" class="btn btn-secondary btn-lg finale-replay-climax-btn" onclick="window.orchestrator.replayClimax()">
-              <span>✨ Replay Finale Climax</span>
+            <button type="button" class="btn btn-primary btn-lg finale-replay-btn" onclick="window.orchestrator.replayExperience()">
+              <span>↺ Replay Celebration</span>
             </button>
           </div>
 
